@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Email Auto Organiser",
+  "version": "1.0",
+  "description": "Putting emails into categories",
+  "action": {
+    "default_popup": "hello.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["https://mail.google.com/*"]
+    }
+  ]
+}
