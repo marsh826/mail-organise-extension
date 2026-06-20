@@ -15,4 +15,16 @@ if (document.readyState === "loading") {
 
 console.log("Checkpoint 2 from popup");
 
-document.querySelector(".aim");
+// var el = document.querySelector(div["aim"]);
+// console.log(el);
+
+// const iframe =
+
+const fragment = document.createDocumentFragment();
+const li = fragment
+  .appendChild(document.createElement("section"))
+  .appendChild(document.createElement("ul"))
+  .appendChild(document.createElement("li"));
+li.textContent = "hello world";
+
+el.appendChild(fragment);
