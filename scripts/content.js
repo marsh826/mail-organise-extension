@@ -15,14 +15,20 @@ function startDOMObserver() {
   };
   
   const callback = (mutationList, observer) => {
-    const target = document.querySelector(".TK");
-    
+    const target = document.querySelector(".G-tF");
     if (target) {
-      console.log("Target '.TK' located");
+      // The following console logs are for debugging purposes,
+      // to ensure that the targeted DOM element is the one correctly fetched.
+      console.log("Target '.G-tF' located");
+      console.log("DOM Element:", target);
+      console.log("HTML from fetched DOM:", target.innerHTML);
+
       observer.disconnect();
       // Execute main extension logic from here
     }
   };
+
+  
   
   const observer = new MutationObserver(callback);
   observer.observe(parentNode, targetConfig);
