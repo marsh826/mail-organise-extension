@@ -75,10 +75,11 @@ function injectCustomButton(target) {
   const root = document.createElement("div");
   const button = document.createElement("button");
 
-  root.classList.add("custom-organise-button");
+  root.classList.add("custom-container");
 
   button.id = "re-organise";
   button.type = "button";
+  button.tabIndex = 0;
   button.textContent = "Custom Button";
 
   button.addEventListener("click", () => {
