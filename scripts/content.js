@@ -76,15 +76,10 @@ function injectCustomButton(target) {
   const button = document.createElement("button");
 
   root.classList.add("custom-organise-button");
-  root.style.display = "flex";
-  root.style.alignItems = "center";
 
+  button.id = "re-organise";
   button.type = "button";
   button.textContent = "Custom Button";
-  button.style.padding = "8px 16px";
-  button.style.marginLeft = "8px";
-  button.style.backgroundColor = "#1a73e8";
-  button.style.cursor = "pointer";
 
   button.addEventListener("click", () => {
     console.log("Custom button clicked!");
