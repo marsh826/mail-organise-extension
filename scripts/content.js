@@ -73,20 +73,28 @@ function injectCustomButton(target) {
   
   console.log("Injecting custom button into the target", target);
   const root = document.createElement("div");
-  const button = document.createElement("button");
+  const button = document.createElement("div");
+  const image = document.createElement("img");
+  const span = document.createElement("span");
 
   root.classList.add("custom-container");
+  image.id = "manage-folder";
+
+  image.src = chrome.runtime.getURL("assets/folder_managed_2.png");
 
   button.id = "re-organise";
-  button.type = "button";
+  button.role = "button";  
   button.tabIndex = 0;
-  button.textContent = "Custom Button";
 
   button.addEventListener("click", () => {
     console.log("Custom button clicked!");
     // Add your custom button logic here
   });
 
+  button.appendChild(image);
+  button.appendChild(
+    document.createTextNode("Organise My Gmail")
+  );
   root.appendChild(button);
   target.appendChild(root);
 }
