@@ -1,6 +1,7 @@
 .custom-container {
     display: inline-flex !important;
     align-items: center !important;
+    padding: 5px; 
 }
 
 #re-organise {
@@ -18,4 +19,10 @@
 #manage-folder {
     height: 24px !important;
     width: 24px !important;
+    background: transparent;
+}
+
+.custom-container:hover {
+    background-color: #1a73e8 !important;
+    border-radius: 10px !important;
 }
