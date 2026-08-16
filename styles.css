@@ -61,14 +61,20 @@
     transform: scale(1);
 }
 
+.custom-container:after {
+    content: "";
+    cursor: pointer;
+    width: ;
+}
 
-/* .custom-container::after {
+
+.custom-container::after {
     content: "";
     height: 200%;
     position: absolute;
     top: -50%;
-    left: -50%;
+    /* left: -50%; */
     width: 200%;
-} */
+}
 
  /* content: "" is for '::before' element to be rendered by browser where pseudo elemetns (::before and ::after) tends to be ignored when loaded */
