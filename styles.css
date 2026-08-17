@@ -10,7 +10,6 @@
     display: inline-flex !important;
     align-items: center !important;
     gap: 8px;
-    /* padding: 16px 8px !important; */
 }
 
 #manage-folder {
@@ -50,7 +49,7 @@
 }
 
 .custom-container:hover {
-    color: white;
+    color: #e3e3e3;
     #manage-folder {
         content: url("/assets/folder_managed.png");
     }
@@ -61,20 +60,11 @@
     transform: scale(1);
 }
 
-.custom-container:after {
-    content: "";
-    cursor: pointer;
-    width: ;
-}
-
-
 .custom-container::after {
     content: "";
-    height: 200%;
     position: absolute;
-    top: -50%;
-    /* left: -50%; */
-    width: 200%;
+    inset: -4px -8px;
 }
 
  /* content: "" is for '::before' element to be rendered by browser where pseudo elemetns (::before and ::after) tends to be ignored when loaded */
+ /* ::after for extending the detection range to activate the ':hover' section */
