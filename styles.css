@@ -18,17 +18,6 @@
     background: transparent;
 }
 
-/* .custom-container:hover {
-    background-color: #1a73e8 !important;
-    border-radius: 25px;
-    position: absolute;
-    box-sizing: border-box;
-    transform: scale(1);
-    transition-duration: .15s;
-    transition-timing-function: cubic-bezier(0.4,0,0.2,1);
-    transition-property: transform,opacity;
-} */
-
 .custom-container::before {
     background-color: #1a73e8 !important;
     top: -10px;
