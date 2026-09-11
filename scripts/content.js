@@ -87,8 +87,26 @@ function injectCustomButton(target) {
   button.tabIndex = 0;
 
   button.addEventListener("click", () => {
+    // const customBttn = event.target.closest('#re-organise');
+    // if (customBttn) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
     console.log("Custom button clicked!");
+    
     // Add your custom button logic here
+        // Add your custom button logic here
+    // const url = "include_later";
+    
+    // try {
+    //   let result = await fetch(url);
+
+    //   if(result.status(200)) {
+    //     console.log(result.body);
+    //   }
+    // } catch (e) {
+    //   console.log(e);
+    // }
   });
 
   button.appendChild(image);
@@ -97,6 +115,11 @@ function injectCustomButton(target) {
   );
   root.appendChild(button);
   target.appendChild(root);
+
+  console.log("BUTTON IN DOM: ", document.querySelector("#re-organise"));
+  document.querySelector("#re-organise").addEventListener("click", () => {
+    console.log("Click test is working!");
+  })
 }
 
 // Safely ensure the document body exists before begin observing the DOM

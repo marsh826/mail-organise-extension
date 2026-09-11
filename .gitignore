@@ -1,0 +1,9 @@
+# Environmental variables
+.env
+
+# IDE
+.vscode
+
+# Python FastAPI
+__pycache__
+.venv
