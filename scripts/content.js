@@ -30,39 +30,14 @@ function startDOMObserver() {
           console.log("HTML from fetched DOM:", node.innerHTML);
           injectCustomButton(node);
         }
-
-        // Check if newly added subtree contains the target selector
-        // node.querySelectorAll(".G-tF").forEach((target) => {
-        //   injectCustomButton(target);
-        // });
       }
     }
-    // if (target) {
-    //   // The following console logs are for debugging purposes,
-    //   // to ensure that the targeted DOM element is the one correctly fetched.
-
-    //   // Disconnect to early?
-    //   observer.disconnect();
-
-    //   // Execute main extension logic from here
-    //   injectCustomButton(target);
-    // }
   };
 
   const observer = new MutationObserver(callback);
   observer.observe(parentNode, targetConfig);
   console.log("MutationObserver is now actively watching Gmail DOM for changes...");
 }
-
-// function searchForTargetElement() {
-//   const target = document.querySelectorAll(".G-tF");
-//   target.forEach((element) => {
-//       console.log("Target '.G-tF' located");
-//       console.log("DOM Element:", element);
-//       console.log("HTML from fetched DOM:", element.innerHTML);
-//       injectCustomButton(target);
-//   })
-// }
 
 function injectCustomButton(target) {
   // Check if the button already exists to avoid duplicates
@@ -86,27 +61,25 @@ function injectCustomButton(target) {
   button.role = "button";  
   button.tabIndex = 0;
 
-  button.addEventListener("click", () => {
-    // const customBttn = event.target.closest('#re-organise');
-    // if (customBttn) {
-    //   event.preventDefault();
-    //   event.stopPropagation();
-    // }
+  button.addEventListener("click", async () => {
     console.log("Custom button clicked!");
     
     // Add your custom button logic here
-        // Add your custom button logic here
-    // const url = "include_later";
+    const url = "http://127.0.0.1:8000";
     
-    // try {
-    //   let result = await fetch(url);
+    try {
+      let result = await fetch(url);
 
-    //   if(result.status(200)) {
-    //     console.log(result.body);
-    //   }
-    // } catch (e) {
-    //   console.log(e);
-    // }
+      if(result.status == '200') {
+        console.log(result.body);
+      }
+
+      if(result.status == '500') {
+        console.log("Server Error: Something went wrong");
+      }
+    } catch (error) {
+      console.log(`Fetch Error: ${error}`);
+    }
   });
 
   button.appendChild(image);

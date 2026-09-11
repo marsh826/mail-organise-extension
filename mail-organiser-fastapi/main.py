@@ -1,7 +1,27 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI() 
 items = []
+
+# origins = [
+#     # Add later
+# ]
+
+app.add_middleware(
+    CORSMiddleware,
+
+# Because Extension is not published, it wasn't given a permanent extension ID from the browser:
+    # allow_origins=origins,
+    # allow_credentials=True,
+
+# Temporary solution:
+    allow_origins=["*"],
+    allow_credentials=False,
+
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root(): 
