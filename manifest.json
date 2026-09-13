@@ -1,8 +1,17 @@
 {
   "manifest_version": 3,
+  "permissions": ["identity"],
   "name": "Email Auto Organiser",
   "version": "1.0",
   "description": "Putting emails into categories",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "email-auto-organiser@testapp.com"
+    }
+  },
+  "host_permissions": [
+    "https://gmail.googleapis.com/*"
+  ],
   "action": {
     "default_popup": "hello.html"
   },
@@ -19,5 +28,8 @@
       "resources": ["assets/*.png"],
       "matches": ["https://mail.google.com/*"]
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["scripts/background.js"]
+  }
 }
