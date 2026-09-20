@@ -1,5 +1,4 @@
-const clientId =
-  "312543099781-g7ijv8r5s3322g9ajufjlicffneu01fc.apps.googleusercontent.com";
+const clientId = "INSERT_ID_HERE"
 // const redirectUri = browser.identity.getRedirectURL();
 
 console.log("Background.js is loaded and running");
